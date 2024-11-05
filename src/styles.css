@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: burlywood;
+    font-family: "Great Vibes", cursive;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5vw; /* адаптивный размер шрифта в зависимости от ширины окна */
+}

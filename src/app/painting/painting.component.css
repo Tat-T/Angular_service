@@ -1,0 +1,81 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    /* background-color: cadetblue; */
+  }
+  
+  .thumbnail {
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .thumbnail-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .painting-details {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .full-image {
+    max-width: auto;
+    height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color:  burlywood;
+    border-radius: 10px;
+    border: 0.5px solid rgb(181, 149, 106);
+  }
+
+  button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+  
+  .related-paintings {
+    margin-top: 20px;
+  }
+  
+  .related-paintings .thumbnail {
+    display: inline-block;
+    margin-right: 15px;
+  }
+  
+  .thumbnail-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+    
+  }
+
+  .thumbnail-img {
+    --f: .1; /* коэффициент параллакса (чем меньше, тем лучше) */
+    --r: 10px; /* радиус */
+    
+    --_f: calc(100%*var(--f)/(1 + var(--f)));
+    --_a: calc(90deg*var(--f));
+    aspect-ratio: calc(1 + var(--f));
+    object-fit: cover;
+    clip-path: inset(0 var(--_f) 0 0 round var(--r));
+    transform: perspective(400px) var(--_t,rotateY(var(--_a)));
+    transition: .5s;
+    cursor: pointer;
+  }
+  .thumbnail-img:hover {
+    clip-path: inset(0 0 0 var(--_f) round var(--r));
+    --_t: translateX(calc(-1*var(--_f))) rotateY(calc(-1*var(--_a)))
+  }
