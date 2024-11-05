@@ -2,7 +2,11 @@
 
 Этот проект был создан с помощью Angular CLI версии 18.2.1.
 
+- Visual Studio Code
+
 ## Установка и запуск
+
+Открыть терминал в Visual Studio Code (Ctrl+J) 
 
 Установить `npm install`
 
